@@ -27,7 +27,8 @@ namespace HarmoniousYJSWS
             "点启动游戏，等到登录完成，各种活动通知的框跳出来，此时不要进游戏，先点修改到目标资源，然后再进游戏。\r\n" +
             "退出游戏后点下还原到国服，不点也没事，下次点启动游戏会自动还原一次的。\r\n" +
             "请各位不要拿这个玩具来直播，录视频做节目，截图大肆发帖之类的。\r\n" +
-            "扩散下载地址时也不要提反这个那个的。不然逼运营去改程序大家都麻烦。\r\n";
+            "扩散下载地址时也不要提反这个那个的。不然逼运营去改程序大家都麻烦。\r\n" +
+            "更新地址：https://github.com/yekehui001/HarmoniousYJSWS";
         public DelegateCommand MakeBackupCommand { get; set; }
         public DelegateCommand RecoverCommand { get; set; }
         public DelegateCommand PatchCommand { get; set; }
