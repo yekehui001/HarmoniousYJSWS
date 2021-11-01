@@ -17,14 +17,12 @@ namespace HarmoniousYJSWS
         private MainWindow view;
         protected override void OnStartup(StartupEventArgs e)
         {        
-
             base.OnStartup(e);
             MainViewModel vm = new MainViewModel();
             if(File.Exists("path.txt"))
             {
                 vm.NativeClientPath = File.ReadAllText("path.txt");
             }
-
             view = new MainWindow();
             view.DataContext = vm;
             this.MainWindow = view;

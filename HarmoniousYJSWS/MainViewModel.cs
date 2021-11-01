@@ -19,8 +19,9 @@ namespace HarmoniousYJSWS
             this.PatchCommand = new DelegateCommand(DoPatchCommand);
             StartGameCommand = new DelegateCommand(DoStartGame);
         }
-
+        public bool IncludeVoice { get; set; }
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
+        public string TargetAssetPath { get => targetAssetPath; set => targetAssetPath = value; }
         public string Info { get; set; } =
             "如果之前用过复制只读文件的伊丽莎白资源替换方法，需要把所有的只读都去掉，修复客户端，然后删掉C盘下的那个资源文件夹。\r\n" +
             "使用方法：首先在上面的框输入国服安装路径，然后点备份资源，备份只需要做一次就行，以后直接启动游戏即可。\r\n" +
@@ -88,7 +89,6 @@ namespace HarmoniousYJSWS
         }
         private void DoRecoverCommand(object para)
         {
-
             if (!CheckPath())
             {
                 return;
@@ -109,7 +109,6 @@ namespace HarmoniousYJSWS
                     }
                 }
             }
-
             Log(string.Format("还原到国服资源"));
         }
         private void DoPatchCommand(object para)
@@ -146,6 +145,10 @@ namespace HarmoniousYJSWS
             if (!CheckPath())
             {
                 return;
+            }
+            if(Directory.Exists(targetAssetPath))
+            {
+                Log(@"请先下载替换的资源包，放置路径.\TargetAsset");
             }
             foreach (var targetfilename in Directory.EnumerateFiles(targetAssetPath))
             {
