@@ -146,7 +146,7 @@ namespace HarmoniousYJSWS
             {
                 return;
             }
-            if(Directory.Exists(targetAssetPath))
+            if(!Directory.Exists(targetAssetPath))
             {
                 Log(@"请先下载替换的资源包，放置路径.\TargetAsset");
             }
