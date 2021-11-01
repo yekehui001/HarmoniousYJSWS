@@ -21,7 +21,7 @@ namespace HarmoniousYJSWS
         }
         public bool IncludeVoice { get; set; }
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
-        public string TargetAssetPath { get => targetAssetPath; set => targetAssetPath = value; }
+        public string OtherClientAssetPath { get; set; }
         public string Info { get; set; } =
             "如果之前用过复制只读文件的伊丽莎白资源替换方法，需要把所有的只读都去掉，修复客户端，然后删掉C盘下的那个资源文件夹。\r\n" +
             "使用方法：首先在上面的框输入国服安装路径，然后点备份资源，备份只需要做一次就行，以后直接启动游戏即可。\r\n" +
@@ -37,6 +37,7 @@ namespace HarmoniousYJSWS
         public event PropertyChangedEventHandler PropertyChanged;
         private string nativeAssetPath;
         private string targetAssetPath = "TargetAsset";
+        private string nativeServerAssetPath = string.Empty;
         private void Log(string v)
         {
             Info += v + "\r\n";
@@ -57,6 +58,20 @@ namespace HarmoniousYJSWS
                     Log("国服资源目录不存在");
                     return false;
                 }
+            }
+            Log(string.Format("国服资源目录为{0}", nativeAssetPath));
+            foreach (var dir in Directory.EnumerateDirectories(@"C:\Users\"))
+            {
+                if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles")))
+                {
+                    nativeServerAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles");
+                    Log(string.Format("服务器资源更新目录为{0}", nativeServerAssetPath));
+                    break;
+                }
+            }
+            if (!Directory.Exists(nativeServerAssetPath))
+            {
+                Log(string.Format("没有发现服务器资源更新目录"));
             }
             return true;
         }
@@ -85,7 +100,14 @@ namespace HarmoniousYJSWS
             FileInfo info = new FileInfo(exepath);
             p.StartInfo.WorkingDirectory = Path.Combine(NativeClientPath, info.DirectoryName);
             p.StartInfo.FileName = exepath;
-            p.Start();
+            try
+            {
+                p.Start();
+            }
+            catch(Exception e)
+            {
+                Log(string.Format("游戏启动失败，因为{0}", e.Message));
+            }
         }
         private void DoRecoverCommand(object para)
         {
@@ -106,6 +128,20 @@ namespace HarmoniousYJSWS
                     catch (Exception e)
                     {
                         Log(string.Format("还原{0}失败，因为{1}", nativeName, e.Message));
+                    }
+                    var nativeFileInfo = new FileInfo(nativeName);
+                    var serverUpdateFilename = Path.Combine(nativeServerAssetPath, nativeFileInfo.Name);
+                    if (File.Exists(serverUpdateFilename))
+                    {
+                        try
+                        {
+                            File.Delete(serverUpdateFilename);
+                            File.Move(serverUpdateFilename + "-b", serverUpdateFilename);
+                        }
+                        catch (Exception e)
+                        {
+                            Log(string.Format("转换{0}失败,因为{1}", serverUpdateFilename, e.Message));
+                        }
                     }
                 }
             }
@@ -136,9 +172,27 @@ namespace HarmoniousYJSWS
                     {
                         Log(string.Format("转换{0}失败,因为{1}", nativeName, e.Message));
                     }
+                    var nativeFileInfo = new FileInfo(nativeName);
+                    var serverUpdateFilename = Path.Combine(nativeServerAssetPath, nativeFileInfo.Name);
+                    if (File.Exists(serverUpdateFilename))
+                    {
+                        try
+                        {
+                            File.Move(serverUpdateFilename, serverUpdateFilename + "-b");
+                            File.Copy(nativeName, serverUpdateFilename);
+                        }
+                        catch (Exception e)
+                        {
+                            Log(string.Format("转换{0}失败,因为{1}", serverUpdateFilename, e.Message));
+                        }
+                    }
                 }
             }
             Log(string.Format("已转换为目标资源"));
+        }
+        private void DoMakeResourcePackage()
+        {
+
         }
         private void DoMakeBackupCommand(object para)
         {
@@ -146,7 +200,8 @@ namespace HarmoniousYJSWS
             {
                 return;
             }
-            if(!Directory.Exists(targetAssetPath))
+            DoRecoverCommand(null);
+            if (!Directory.Exists(targetAssetPath))
             {
                 Log(@"请先下载替换的资源包，放置路径.\TargetAsset");
             }
@@ -158,6 +213,7 @@ namespace HarmoniousYJSWS
                 {
                     if (File.Exists(nativeFilename + "-b"))
                     {
+                        //should not be here.
                         Log(string.Format("似乎已经是目标服的资源，是不是重复按了备份？操作终止。\r\n" +
                             "如果你不清楚当前的状态，可以尝试还原到国服资源，或者重装游戏。", targetfilename));
                         return;
@@ -166,14 +222,14 @@ namespace HarmoniousYJSWS
                     {
                         File.Copy(targetfilename, nativeFilename + "-h", true);
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
-                        Log(string.Format("复制{0}失败，因为{1}", nativeFilename + "-h",e.Message));
+                        Log(string.Format("复制{0}失败，因为{1}", nativeFilename + "-h", e.Message));
                     }
                 }
                 else
                 {
-                    Log(string.Format("{0}的对应资源不存在", targetfilename));
+                    Log(string.Format("{0}的对应资源不存在,可能是未来版本的资源。", targetfilename));
                 }
             }
             Log(string.Format("备份结束"));

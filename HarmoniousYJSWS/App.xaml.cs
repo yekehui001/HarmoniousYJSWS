@@ -14,9 +14,28 @@ namespace HarmoniousYJSWS
     /// </summary>
     public partial class App : Application
     {
+
+        private void ExtactVoice(string from,string to)
+        {
+            if(!Directory.Exists(to))
+            {
+                Directory.CreateDirectory(to);
+            }
+            foreach(var filename in Directory.EnumerateFiles(from))
+            {
+                if(filename.EndsWith(".vkor"))
+                {
+                    FileInfo info = new FileInfo(filename);
+                    File.Copy(filename, Path.Combine(to, info.Name.Replace(".vkor",".vchn")));
+                }
+            }
+        }
+
         private MainWindow view;
         protected override void OnStartup(StartupEventArgs e)
-        {        
+        {
+            //ExtactVoice(@"D:\CountersideFW\client\Data\StreamingAssets", @"Voices");
+            //return;
             base.OnStartup(e);
             MainViewModel vm = new MainViewModel();
             if(File.Exists("path.txt"))
