@@ -18,6 +18,15 @@ C盘资料夹位置：C:\Users\[你的用户名]\AppData\LocalLow\studioBside\�
 如果这一切已经发生了，删除安装目录资料夹下所有*.cn-b，删除C盘资料夹，修复客户端，然后再用工具启动，按流程走一遍。
 改完依然没用，只能重装游戏试试了。
 
+4.XXXX转换失败
+只有一两条的话不用管，如果一大堆你可能是点转换的时机不对。
+
 本程序没有修改客户端文件的任何内容，也没有内存注入和抓包行为。
+
+使用说明内附。
+
+beta版整合包下载地址: [https://pan.baidu.com/s/1Mm2poaO3VDcTL3HgcMkplQ] 提取码: rkvs
+
+用release的主程序替换beta主程序即可。
 
 https://bbs.nga.cn/read.php?&tid=29205247
