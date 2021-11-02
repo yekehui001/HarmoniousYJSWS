@@ -1,5 +1,5 @@
 # HarmoniousYJSWS
-和谐的异界事务所
+异界很凉快
 
 常见问题：
 修复客户端：[游戏安装路径]\[B服还有Games]\Launcher\修复.bat
