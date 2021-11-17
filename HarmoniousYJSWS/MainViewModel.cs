@@ -17,7 +17,7 @@ namespace HarmoniousYJSWS
             this.MakeBackupCommand = new DelegateCommand(DoMakeBackupCommand);
             this.RecoverCommand = new DelegateCommand(DoRecoverCommand);
             this.PatchCommand = new DelegateCommand(DoPatchCommand);
-            StartGameCommand = new DelegateCommand(DoStartGame);
+            this.StartGameCommand = new DelegateCommand(DoStartGame);
         }
         public bool IncludeVoice { get; set; }
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
@@ -37,13 +37,18 @@ namespace HarmoniousYJSWS
         public event PropertyChangedEventHandler PropertyChanged;
         private string nativeAssetPath;
         private string targetAssetPath = "TargetAsset";
-        private string nativeServerAssetPath = string.Empty;
+        private string hotfixAssetPath = string.Empty;
         private void Log(string v)
         {
             Info += v + "\r\n";
         }
+        private bool pathChecked = false;
         private bool CheckPath()
         {
+            if (pathChecked)
+            {
+                return true;
+            }
             if (!Directory.Exists(NativeClientPath))
             {
                 Log("国服目录不存在");
@@ -64,15 +69,16 @@ namespace HarmoniousYJSWS
             {
                 if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles")))
                 {
-                    nativeServerAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles");
-                    Log(string.Format("服务器资源更新目录为{0}", nativeServerAssetPath));
+                    hotfixAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles");
+                    Log(string.Format("服务器资源更新目录为{0}", hotfixAssetPath));
                     break;
                 }
             }
-            if (!Directory.Exists(nativeServerAssetPath))
+            if (!Directory.Exists(hotfixAssetPath))
             {
                 Log(string.Format("没有发现服务器资源更新目录"));
             }
+            this.pathChecked = true;
             return true;
         }
         private void DoStartGame(object para)
@@ -104,9 +110,37 @@ namespace HarmoniousYJSWS
             {
                 p.Start();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Log(string.Format("游戏启动失败，因为{0}", e.Message));
+            }
+        }
+        private void HotfixRecheck()
+        {
+            if (!CheckPath())
+            {
+                return;
+            }
+            foreach (var hffilename in Directory.EnumerateFiles(hotfixAssetPath))
+            {
+                var hfFileInfo = new FileInfo(hffilename);
+                var nativeFilename = Path.Combine(nativeAssetPath, hfFileInfo.Name);
+                if (!File.Exists(nativeFilename))
+                {
+                    try
+                    {
+                        File.Copy(hffilename, nativeFilename);
+                        var targetFilename = Path.Combine(targetAssetPath, hfFileInfo.Name);
+                        if (File.Exists(targetFilename))
+                        {
+                            File.Copy(targetFilename, nativeFilename + "-h");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Log(string.Format("复制{0}失败，因为{1}", hffilename, e.Message));
+                    }
+                }
             }
         }
         private void DoRecoverCommand(object para)
@@ -130,7 +164,7 @@ namespace HarmoniousYJSWS
                         Log(string.Format("还原{0}失败，因为{1}", nativeName, e.Message));
                     }
                     var nativeFileInfo = new FileInfo(nativeName);
-                    var serverUpdateFilename = Path.Combine(nativeServerAssetPath, nativeFileInfo.Name);
+                    var serverUpdateFilename = Path.Combine(hotfixAssetPath, nativeFileInfo.Name);
                     if (File.Exists(serverUpdateFilename))
                     {
                         try
@@ -153,6 +187,7 @@ namespace HarmoniousYJSWS
             {
                 return;
             }
+            HotfixRecheck();
             foreach (var filename in Directory.EnumerateFiles(nativeAssetPath))
             {
                 if (filename.EndsWith("-b"))
@@ -173,7 +208,7 @@ namespace HarmoniousYJSWS
                         Log(string.Format("转换{0}失败,因为{1}", nativeName, e.Message));
                     }
                     var nativeFileInfo = new FileInfo(nativeName);
-                    var serverUpdateFilename = Path.Combine(nativeServerAssetPath, nativeFileInfo.Name);
+                    var serverUpdateFilename = Path.Combine(hotfixAssetPath, nativeFileInfo.Name);
                     if (File.Exists(serverUpdateFilename))
                     {
                         try
@@ -209,6 +244,7 @@ namespace HarmoniousYJSWS
             {
                 var targetFileInfo = new FileInfo(targetfilename);
                 var nativeFilename = Path.Combine(nativeAssetPath, targetFileInfo.Name);
+                var serverFilename = Path.Combine(nativeAssetPath, targetFileInfo.Name);
                 if (File.Exists(nativeFilename))
                 {
                     if (File.Exists(nativeFilename + "-b"))
