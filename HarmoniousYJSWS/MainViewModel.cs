@@ -40,7 +40,7 @@ namespace HarmoniousYJSWS
         private string hotfixAssetPath = string.Empty;
         private void Log(string v)
         {
-            Info += v + "\r\n";
+            Application.Current.Dispatcher.Invoke(() => Info += v + "\r\n");
         }
         private bool pathChecked = false;
         private bool CheckPath()
@@ -102,10 +102,10 @@ namespace HarmoniousYJSWS
                 Log("没有发现游戏执行程序");
                 return;
             }
-            Process p = new Process();
+            var p = new Process();
             FileInfo info = new FileInfo(exepath);
             p.StartInfo.WorkingDirectory = Path.Combine(NativeClientPath, info.DirectoryName);
-            p.StartInfo.FileName = exepath;
+            p.StartInfo.FileName = exepath;           
             try
             {
                 p.Start();
@@ -114,6 +114,7 @@ namespace HarmoniousYJSWS
             {
                 Log(string.Format("游戏启动失败，因为{0}", e.Message));
             }
+
         }
         private void HotfixRecheck()
         {
@@ -244,7 +245,6 @@ namespace HarmoniousYJSWS
             {
                 var targetFileInfo = new FileInfo(targetfilename);
                 var nativeFilename = Path.Combine(nativeAssetPath, targetFileInfo.Name);
-                var serverFilename = Path.Combine(nativeAssetPath, targetFileInfo.Name);
                 if (File.Exists(nativeFilename))
                 {
                     if (File.Exists(nativeFilename + "-b"))

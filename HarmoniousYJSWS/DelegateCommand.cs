@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace HarmoniousYJSWS
@@ -24,8 +25,16 @@ namespace HarmoniousYJSWS
         public void Execute(object parameter)
         {
             isExecuting = true;
-            Action?.Invoke(parameter);
-            isExecuting = false;
+            CanExecuteChanged(this, new EventArgs());
+            var t = new Task(() =>
+            {
+                Action?.Invoke(parameter);
+                isExecuting = false;
+                Application.Current.Dispatcher.Invoke(() => CanExecuteChanged(this, new EventArgs()));
+            });
+            t.Start();
+
+
         }
     }
 }
