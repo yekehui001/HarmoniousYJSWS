@@ -102,6 +102,27 @@ namespace HarmoniousYJSWS
                 Log("没有发现游戏执行程序");
                 return;
             }
+            var minSizeFileName = Directory.EnumerateFiles(hotfixAssetPath)
+                .Select(x => new FileInfo(x))
+                .Where(x => x.Name.StartsWith("ab_"))
+                .OrderBy(x => x.Length).FirstOrDefault()
+                ?.FullName;
+            if (!string.IsNullOrEmpty(minSizeFileName))
+            {
+                try
+                {
+                    File.Delete(minSizeFileName);
+                    Log("触发更新成功，请在更新结束提示“点击继续”时点击修改资源按钮。");
+                }
+                catch
+                {
+                    Log("触发更新失败，请在登录界面点击修改资源按钮。");
+                }
+            }
+            else
+            {
+                Log("触发更新失败，请在登录界面点击修改资源按钮。");
+            }
             var p = new Process();
             FileInfo info = new FileInfo(exepath);
             p.StartInfo.WorkingDirectory = Path.Combine(NativeClientPath, info.DirectoryName);
