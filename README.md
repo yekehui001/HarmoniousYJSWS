@@ -28,7 +28,7 @@
 + keytool -genkey -alias test -keyalg RSA -validity 10000 -keystore test.keystore
 + 会叫你写个密码，这个记住，其他的随便填。最后问你是否确认，输入是
 + 执行签名:
-+ jarsigner -verbose -keystore test.keystore a\dist\a.apk test
++ jarsigner -verbose -keystore test.keystore [a.apk的路径] test
 + 中间会叫你填上面你写的密码。
 
 2. 制作资源包
