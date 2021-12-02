@@ -4,6 +4,10 @@
 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 提取码：8kkc 
 
+### PC端韩语音包
+链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
+提取码：y7gc 
+
 ### PC端婚纱版本修正包
 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
 提取码：5mt3 
