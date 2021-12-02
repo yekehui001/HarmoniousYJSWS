@@ -33,7 +33,7 @@
 + 中间会叫你填上面你写的密码。
 
 2. 制作资源包（注意PC和安卓的资源文件是不互通的）
-+ 下载省服的apk，扩展名改rar，复制其中的
++ 下载省服的apk，扩展名改rar，复制assets/Assetbundles/中的
 + ab_fx_skill_cutin_nkm_*
 + ab_ui_nkm_ui_*
 + ab_unit_game_spine_nkm_*
