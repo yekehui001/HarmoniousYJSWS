@@ -14,7 +14,7 @@
 
 ### 安卓端制作方法：
 1. 制作那个啥客户端。
-+ 下载你要的那个服的apk文件，以a.apk代称。下载jdk，安装jdk，配置好系统PATH。
++ 下载你要玩的那个服的apk文件，以a.apk代称。下载jdk，安装jdk，配置好系统PATH。
 + a.apk改名a.zip。打开，删除META-INFO文件夹，删除assets/Assetbundles/下所有的
 + ab_fx_skill_cutin_nkm_*
 + ab_ui_nkm_ui_*
