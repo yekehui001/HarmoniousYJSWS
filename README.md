@@ -41,7 +41,9 @@
 + ab_login_screen_*
 + 如果需要语音的话还有
 + ab_ui_unit_voice_*
-+ 安装省服apk，更新，去省服热更新目录再次寻找以上提到的资源文件。
++ 安装省服apk，更新，去省服热更新目录再次寻找以上提到的资源文件
++ 省服热更新文件夹记得是Android\data\com.gamebeans.coside\files\Assetbundles,具体记不得了，反正认准gamebeans和coside。
++ 国服热更新文件夹是Android\data\com.zlongame.cn.coside\files\Assetbundles
 
 
 3. 安装过程
