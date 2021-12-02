@@ -7,6 +7,7 @@
 ### PC端婚纱版本修正包
 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
 提取码：5mt3 
+覆盖到TargetAssets里。
 
 ### 婚纱版本人物头像消失问题：
 点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
