@@ -55,3 +55,10 @@
 + 打开国服热更新目录，与省服提取的资源文件进行对比，如果扩展名为.asset就忽略；扩展名为.cn就把省服的文件改成.cn覆盖。如果要换语言，把省服的所有.vkor改成.vchn，覆盖国服文件。
 
 + 再次启动游戏确认替换是否成功。
+
+#### 老师傅版本的安卓端
+链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
+提取码：x89d 
+#### 老师傅版本的安卓立绘包
+链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
+提取码：1682 
