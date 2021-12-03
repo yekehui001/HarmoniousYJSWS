@@ -19,7 +19,7 @@
 #### 老师傅版本的官服安卓端
 链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
 提取码：x89d 
-#### 老师傅版本的安卓立绘包
+#### 老师傅版本的安卓热更新替换立绘包
 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
 提取码：1682 
 
