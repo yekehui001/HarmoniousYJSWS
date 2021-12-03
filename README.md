@@ -1,21 +1,27 @@
 # HarmoniousYJSWS
 ## 异界很凉快
-### PC端整合包1.0.5
+#### PC端老师傅版本整合包1.0.5
 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 提取码：8kkc 
 
-### PC端韩语音包
+#### PC端韩语音包
 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
 提取码：y7gc 
 
-### PC端婚纱版本修正包
+#### PC端婚纱版本增量包
 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
 提取码：5mt3 
 覆盖到TargetAssets里。
 
-### 婚纱版本人物头像消失问题：
+#### PC端婚纱版本人物头像消失问题：
 点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
 
+#### 老师傅版本的官服安卓端
+链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
+提取码：x89d 
+#### 老师傅版本的安卓立绘包
+链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
+提取码：1682 
 
 ### 安卓端制作方法：
 1. 制作那个啥客户端。
@@ -56,9 +62,4 @@
 
 + 再次启动游戏确认替换是否成功。
 
-#### 老师傅版本的安卓端
-链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
-提取码：x89d 
-#### 老师傅版本的安卓立绘包
-链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
-提取码：1682 
+
