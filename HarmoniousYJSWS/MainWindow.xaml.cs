@@ -24,5 +24,10 @@ namespace HarmoniousYJSWS
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sv1.ScrollToBottom();
+        }
     }
 }

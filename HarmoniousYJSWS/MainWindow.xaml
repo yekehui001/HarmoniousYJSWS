@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HarmoniousYJSWS"
         mc:Ignorable="d"
-        Title="异界资源替换 ver1.0.5" Height="450" Width="900">
+        Title="异界资源替换 ver1.1.0" Height="450" Width="550">
     <Grid >
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
@@ -21,14 +22,17 @@
             <Label Content="目标服路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
             <TextBox Text="{Binding Path=TargetClientPath}" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Width="500"/>
         </StackPanel>-->
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <Button Width="120" Command="{Binding Path=MakeBackupCommand}" Content="备份资源"></Button>
-            <Button Width="120" Command="{Binding Path=StartGameCommand}" Content="启动游戏"></Button>
-            <Button Width="120" Command="{Binding Path=PatchCommand}" Content="修改到目标资源"></Button>
-            <Button Width="120" Command="{Binding Path=RecoverCommand}" Content="还原到国服资源"></Button>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+            <Button Width="100" Command="{Binding Path=InstallCommand}" Content="安装资源包"></Button>
+            <Button Width="100" Command="{Binding Path=UninstallCommand}" Content="卸载资源包"></Button>
         </StackPanel>
-        <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <TextBlock Text="{Binding Path=Info}" ></TextBlock>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3">
+            <Button Width="100" Command="{Binding Path=StartGameCommand}" Content="启动游戏"></Button>
+            <Button Width="100" Command="{Binding Path=PatchCommand}" Content="替换到资源包"></Button>
+            <Button Width="100" Command="{Binding Path=RecoverCommand}" Content="还原到国服"></Button>
+        </StackPanel>
+        <ScrollViewer x:Name="sv1" Grid.Row="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <TextBox Text="{Binding Path=Info}" TextChanged="TextBox_TextChanged" ></TextBox>
         </ScrollViewer>    
     </Grid>
 </Window>

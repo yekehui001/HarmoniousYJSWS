@@ -25,9 +25,9 @@ namespace HarmoniousYJSWS
             //funcs.ExtactIllution(@"D:\CountersideFW\client\Data\StreamingAssets", @"C:\Users\GE63VR\AppData\LocalLow\studioBside\异界事务所\Assetbundles", "Illusions");
             //funcs.ExtactIllution(@"C:\Users\GE63VR\AppData\LocalLow\studioBside\未來戰\Assetbundles", @"D:\YiJieShiWuSuo\client\Data\StreamingAssets", "Illusions");
             //funcs.ExtactIllution(@"C:\Users\GE63VR\AppData\LocalLow\studioBside\未來戰\Assetbundles", @"C:\Users\GE63VR\AppData\LocalLow\studioBside\异界事务所\Assetbundles", "Illusions");
-
+            //Environment.Exit(0);
             //PickAndriod(@"D:\Assetbundles", "TargetAsset", "TargetAsset_Android");
-           // return;
+
             base.OnStartup(e);
             MainViewModel vm = new MainViewModel();
             if (File.Exists("path.txt"))

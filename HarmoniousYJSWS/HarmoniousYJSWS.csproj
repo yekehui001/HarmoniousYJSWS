@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="ResourceExtractFunctions.cs" />
     <Compile Include="Singleton.cs" />
+    <Compile Include="StringUtils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
