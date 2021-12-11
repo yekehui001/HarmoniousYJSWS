@@ -25,10 +25,9 @@ namespace HarmoniousYJSWS
         public string Info { get; set; } =
             "使用方法：" +
             "首次启动时在上面的框输入国服安装路径，然后点安装资源。\r\n" +
-            "之后点启动游戏，等到更新完成，提示\"点击继续\"时点转换资源，然后再进游戏。\r\n" +
+            "之后点启动游戏，等到更新完成，提示\"点击继续\"时点替换资源，然后再进游戏。\r\n" +
             "请各位不要拿这个玩具来直播，录视频做节目，截图大肆发帖之类的。\r\n" +
             "更新地址：https://github.com/yekehui001/HarmoniousYJSWS \r\n";
-           
         public DelegateCommand InstallCommand { get; set; }
         public DelegateCommand UninstallCommand { get; set; }
         public DelegateCommand RecoverCommand { get; set; }
@@ -109,6 +108,7 @@ namespace HarmoniousYJSWS
                     }
                 }
             }
+            Log("已处理{0}文件".Format(count));
             Log("资源包卸载完成。");
         }
         private void DoStartGameCommand(object para)
@@ -238,6 +238,7 @@ namespace HarmoniousYJSWS
                     }
                 }
             }
+            Log("已处理{0}文件".Format(count));
             Log(string.Format("还原到国服资源"));
         }
         private void DoPatchCommand(object para)
@@ -288,26 +289,12 @@ namespace HarmoniousYJSWS
                     }
                 }
             }
+            Log("已处理{0}文件".Format(count));
             Log(string.Format("已完成转换。"));
         }
         private void DoMakeResourcePackage()
         {
 
-        }
-        class FileNoExtComparer : IEqualityComparer<string>
-        {
-            public bool Equals(string x, string y)
-            {
-                var a = Path.GetFileNameWithoutExtension(x);
-                var b = Path.GetFileNameWithoutExtension(y);
-                return string.Equals(a, b);
-            }
-
-            public int GetHashCode(string obj)
-            {
-                var a = Path.GetFileNameWithoutExtension(obj);
-                return a.GetHashCode();
-            }
         }
         private void ExecuteUpdateScript()
         {
@@ -348,13 +335,21 @@ namespace HarmoniousYJSWS
             ExecuteUpdateScript();
             int count = 0;
             Log(string.Format("开始安装"));
-            HashSet<string> nativeFilenames = new HashSet<string>(Directory.EnumerateFiles(nativeAssetPath), new FileNoExtComparer());
+            HashSet<string> nativeFilenames = new HashSet<string>(Directory.EnumerateFiles(nativeAssetPath));
             foreach (var targetfilename in Directory.EnumerateFiles(targetAssetPath))
             {
                 var targetFileInfo = new FileInfo(targetfilename);
-                var nativeFilenameNoEx = Path.GetFileNameWithoutExtension(Path.Combine(nativeAssetPath, targetFileInfo.Name));
-                string nativeFilename = string.Empty;
-                if (nativeFilenames.TryGetValue(nativeFilenameNoEx, out nativeFilename))
+                var nativeFilenameNoEx = Path.Combine(nativeAssetPath, Path.GetFileNameWithoutExtension(targetFileInfo.Name));
+                var nativeFilename = string.Empty;
+                if (nativeFilenames.Contains(nativeFilenameNoEx + ".cn"))
+                {
+                    nativeFilename = nativeFilenameNoEx + ".cn";
+                }
+                if (nativeFilenames.Contains(nativeFilenameNoEx + ".vchn"))
+                {
+                    nativeFilename = nativeFilenameNoEx + ".vchn";
+                }
+                if (!string.IsNullOrEmpty(nativeFilename))
                 {
                     if (Path.GetExtension(nativeFilename) == ".cn" || Path.GetExtension(nativeFilename) == ".vchn")
                     {
@@ -373,6 +368,7 @@ namespace HarmoniousYJSWS
                     }
                 }
             }
+            Log("已处理{0}文件".Format(count));
             Log(string.Format("安装结束"));
         }
     }

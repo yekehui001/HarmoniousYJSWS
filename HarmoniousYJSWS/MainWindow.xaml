@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HarmoniousYJSWS"
         mc:Ignorable="d"
-        Title="异界资源替换 ver1.1.0" Height="450" Width="550">
+        Title="异界资源替换 ver1.1.1" Height="450" Width="550">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -22,11 +22,11 @@
             <Label Content="目标服路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
             <TextBox Text="{Binding Path=TargetClientPath}" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Width="500"/>
         </StackPanel>-->
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
             <Button Width="100" Command="{Binding Path=InstallCommand}" Content="安装资源包"></Button>
             <Button Width="100" Command="{Binding Path=UninstallCommand}" Content="卸载资源包"></Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3">
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
             <Button Width="100" Command="{Binding Path=StartGameCommand}" Content="启动游戏"></Button>
             <Button Width="100" Command="{Binding Path=PatchCommand}" Content="替换到资源包"></Button>
             <Button Width="100" Command="{Binding Path=RecoverCommand}" Content="还原到国服"></Button>
