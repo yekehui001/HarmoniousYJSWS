@@ -50,17 +50,19 @@
 + ab_unit_game_spine_nkm_*
 + ab_unit_illust_*
 + ab_login_screen_*
++ 把上述文件的扩展名从.asset改.cn
 + 如果需要语音的话还有
 + ab_ui_unit_voice_*
-+ 安装省服apk，更新，去省服热更新目录再次寻找以上提到的资源文件
-+ 省服热更新文件夹记得是Android\data\com.gamebeans.coside\files\Assetbundles,具体记不得了，反正认准gamebeans和coside。
++ 把上述文件的扩展名从.vkor改.vchn
++ 安装省服apk，更新，去省服热更新目录再次寻找以上提到的资源文件,并重复改名操作。（建议做个批处理脚本或者自己做个改名程序）
++ 省服热更新文件夹似乎是Android\data\com.gamebeans.coside\files\Assetbundles,具体记不得了，反正认准gamebeans和coside。
 + 国服热更新文件夹是Android\data\com.zlongame.cn.coside\files\Assetbundles
 
 
 3. 安装过程
-+ a.apk安装好后进游戏，点开完整性检测，更新完报错退出游戏，再进游戏，再更新，退出游戏。
-+ 打开国服热更新目录，与省服提取的资源文件进行对比，如果扩展名为.asset就忽略；扩展名为.cn就把省服的文件改成.cn覆盖。如果要换语言，把省服的所有.vkor改成.vchn，覆盖国服文件。
++ 卸载原来的客户端，安装a.apk，安装好后进游戏，点开完整性检测，更新完报错退出游戏，再进游戏，再更新，退出游戏。
++ 打开国服热更新目录，将上述提取的省服资源包覆盖进去。
 
 + 再次启动游戏确认替换是否成功。
-
++ 此后每次有小更新就把省服资源包重新覆盖一边，有大更新就重新做一次客户端。
 
