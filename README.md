@@ -16,6 +16,10 @@
 #### PC端婚纱版本人物头像消失问题：
 点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
 
+#### 另外推荐一下贴吧涯S做的清凉工具：
+https://tieba.baidu.com/p/7649001346?pn=1
+这个工具是个自制更新服务器，启动后会自动顶替紫龙的更新服务器，把布料多的文件“更新”掉，非常的强。
+
 #### 老师傅版本的官服安卓端
 链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
 提取码：x89d 
