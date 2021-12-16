@@ -42,7 +42,6 @@ https://tieba.baidu.com/p/7649001346?pn=1
 + ab_unit_game_spine_nkm_*
 + ab_unit_illust_*
 + ab_login_screen_*
-+ 要换语音的话再删掉assets/Assetbundles/下所有的
 + ab_ui_unit_voice_*
 + 然后把扩展名改回apk。
 + 打开cmd，创建签名：
