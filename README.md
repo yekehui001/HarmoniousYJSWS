@@ -4,11 +4,11 @@
 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 提取码：8kkc 
 
-#### PC端韩语音包
+#### PC端韩语音包（覆盖到TargetAsset）
 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
 提取码：y7gc 
 
-#### PC端日语音包（仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
+#### PC端日语音包（覆盖到TargetAsset，仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
 链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
 提取码：nsx1
 
