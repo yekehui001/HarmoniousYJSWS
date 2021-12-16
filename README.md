@@ -9,8 +9,7 @@
 提取码：y7gc 
 
 #### PC端日语音包（仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
-链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
-提取码：y7gc 
+
 
 #### PC端婚纱版本增量包
 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
