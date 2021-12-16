@@ -33,7 +33,7 @@ https://tieba.baidu.com/p/7649001346?pn=1
 提取码：1682 
 
 ### 安卓端制作方法：
-1. 制作那个啥客户端。
+#### 1. 制作那个啥客户端。
 + 下载你要玩的那个服的apk文件，以a.apk代称。下载jdk，安装jdk，配置好系统PATH。
 + a.apk改名a.zip。打开，删除META-INFO文件夹，删除assets/Assetbundles/下所有的
 + ab_fx_skill_cutin_nkm_*
@@ -51,7 +51,7 @@ https://tieba.baidu.com/p/7649001346?pn=1
 + jarsigner -verbose -keystore test.keystore [a.apk的路径] test
 + 中间会叫你填上面你写的密码。
 
-2. 制作资源包（注意PC和安卓的资源文件是不互通的）
+#### 2. 制作资源包（注意PC和安卓的资源文件是不互通的）
 + 下载省服的apk，扩展名改rar，复制assets/Assetbundles/中的
 + ab_fx_skill_cutin_nkm_*
 + ab_ui_nkm_ui_*
@@ -67,7 +67,7 @@ https://tieba.baidu.com/p/7649001346?pn=1
 + 国服热更新文件夹是Android\data\com.zlongame.cn.coside\files\Assetbundles
 
 
-3. 安装过程
+#### 3. 安装过程
 + 卸载原来的客户端，安装a.apk，安装好后进游戏，点开完整性检测，更新完报错退出游戏，再进游戏，再更新，退出游戏。
 + 打开国服热更新目录，将上述提取的省服资源包覆盖进去。
 
