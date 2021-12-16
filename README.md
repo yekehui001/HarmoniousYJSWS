@@ -1,38 +1,42 @@
 # HarmoniousYJSWS
 ## 异界很凉快
-#### PC端老师傅版本立绘与替换程序整合包1.0.5，下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
-链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
-提取码：8kkc 
+#### 主程序更新地址
++ https://github.com/yekehui001/HarmoniousYJSWS/releases
+
+#### PC端老师傅版本立绘与替换程序整合包1.0.5
++ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
++ 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
++ 提取码：8kkc 
 
 
 #### PC端韩语音包（覆盖到TargetAsset）
-链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
-提取码：y7gc 
++ 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
++ 提取码：y7gc 
 
 #### PC端日语音包（覆盖到TargetAsset，仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
-链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
-提取码：nsx1
++ 链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
++ 提取码：nsx1
 
 #### PC端婚纱版本增量包
-链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
-提取码：5mt3 
-覆盖到TargetAssets里。
++ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
++ 提取码：5mt3 
++ 覆盖到TargetAssets里。
 
 #### PC端婚纱版本人物头像消失问题：
 点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
 
 #### 另外推荐一下贴吧涯S做的清凉工具：
-https://tieba.baidu.com/p/7649001346?pn=1
-真一键替换。这个工具启动后会顶替紫龙的更新服务器，拦截客户端的更新请求，让紫龙无法替换清凉的衣服。
++ https://tieba.baidu.com/p/7649001346?pn=1
++ 真一键替换。这个工具启动后会顶替紫龙的更新服务器，拦截客户端的更新请求，让紫龙无法替换清凉的衣服。
 
 #### 老师傅版本的官服安卓端
-装完确认一下，可能修女的常服皮肤没有立绘，需要点完整性检测重新更新一次。
-链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
-提取码：x89d 
++ 装完确认一下，可能修女的常服皮肤没有立绘，需要点完整性检测重新更新一次。
++ 链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
++ 提取码：x89d 
 #### 老师傅版本的安卓热更新替换立绘包
-安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
-链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
-提取码：1682 
++ 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
++ 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
++ 提取码：1682 
 
 ### 安卓端制作方法：
 #### 1. 制作那个啥客户端。
