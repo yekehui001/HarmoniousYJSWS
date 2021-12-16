@@ -1,6 +1,6 @@
 # HarmoniousYJSWS
 ## 异界很凉快
-#### PC端老师傅版本整合包1.0.5
+#### PC端老师傅版本立绘与替换程序整合包1.0.5
 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 提取码：8kkc 
 
