@@ -33,8 +33,8 @@
 + 参考日服架构裁剪到100M，第一次运行请勾上完整性检测。
 + 可以任意替换素材到Android\data\com.zlongame.cn.coside\files\Assetbundles
 + 注意PC端和安卓端的素材是不兼容的。
-+ 链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
-+ 提取码：x89d 
++ 链接：https://pan.baidu.com/s/1TLbHsmcecDdFakDa_wjElw 
++ 提取码：gtus
 
 #### 安卓端立绘包
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
