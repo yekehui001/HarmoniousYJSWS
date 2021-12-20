@@ -1,5 +1,5 @@
 # HarmoniousYJSWS
-## 异界很凉快
+## 异界事务所美术资源替换工具
 #### 替换工具更新地址
 + https://github.com/yekehui001/HarmoniousYJSWS/releases
 
