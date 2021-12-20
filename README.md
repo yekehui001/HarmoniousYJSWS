@@ -33,6 +33,8 @@
 + 参考日服架构裁剪到100M，第一次运行请勾上完整性检测。
 + 可以任意替换素材到Android\data\com.zlongame.cn.coside\files\Assetbundles
 + 注意PC端和安卓端的素材是不兼容的。
++ 装了官服或其他人做的客户端需要先卸载掉。
++ 不支持合作方登录，需要将合作方账号绑定到手机号才能登录。
 + 链接：https://pan.baidu.com/s/1TLbHsmcecDdFakDa_wjElw 
 + 提取码：gtus
 
