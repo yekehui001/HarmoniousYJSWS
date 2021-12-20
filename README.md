@@ -2,7 +2,7 @@
 ## 异界事务所美术资源替换工具
 #### 替换工具更新地址
 + https://github.com/yekehui001/HarmoniousYJSWS/releases
-有问题可以点上面的Issues提交。
++ 有问题可以点上面的Issues提交。
 
 #### PC端老师傅版本立绘与替换工具ver 1.0.5的整合包
 + 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
