@@ -29,10 +29,13 @@
 + https://tieba.baidu.com/p/7649001346?pn=1
 + 真一键替换。这个工具启动后会顶替紫龙的更新服务器，拦截客户端的更新请求，让紫龙无法替换清凉的衣服。
 
-#### 老师傅版本的官服安卓端
-+ 装完确认一下，可能修女的常服皮肤没有立绘，需要点完整性检测重新更新一次。
+#### 安卓官服轻量化客户端
++ 参考日服架构裁剪到100M，第一次运行请勾上完整性检测。
++ 可以任意替换素材到Android\data\com.zlongame.cn.coside\files\Assetbundles
++ 注意PC端和安卓端的素材是不兼容的。
 + 链接：https://pan.baidu.com/s/1p6LFApIhlnWfYmlUXJOu5A 
 + 提取码：x89d 
+
 #### 老师傅版本的安卓热更新替换立绘包
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
 + 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
