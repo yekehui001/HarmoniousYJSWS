@@ -39,8 +39,9 @@
 + 注意PC端和安卓端的素材是不兼容的。
 + 装了官服或其他人做的客户端需要先卸载掉。
 + 不支持合作方登录，需要将合作方账号绑定到手机号才能登录。
-+ 链接：https://pan.baidu.com/s/1TLbHsmcecDdFakDa_wjElw 
-+ 提取码：gtus
++ 更新到圣诞版本
++ 链接：https://pan.baidu.com/s/1-AOcO-uLhAZfvkFbqaM84Q 
++ 提取码：s3s2
 
 #### 安卓端立绘包
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
