@@ -44,11 +44,10 @@
 + 链接：https://pan.baidu.com/s/1-AOcO-uLhAZfvkFbqaM84Q 
 + 提取码：s3s2
 
-#### 安卓端立绘包
+#### 安卓端立绘包（老师傅版本很老了，新的都没有，推荐去找其他人做的新点的）
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
 + 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
 + 提取码：1682 
-+ 想到这事的时候日服端已经删了，所以没有语音包，请去NGA/贴吧自寻。注意要找安卓端的。
 
 
 ### 安卓端制作方法：
