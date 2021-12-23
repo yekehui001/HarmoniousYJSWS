@@ -12,7 +12,10 @@
 + 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
 + 提取码：5mt3 
 + 覆盖到TargetAssets里。
-
+##### PC端圣诞版本立绘增量包
++ 链接：https://pan.baidu.com/s/1SdByrcXaLAXuTwQ4R_qEug 
++ 提取码：lqes
++ 覆盖到TargetAssets里。
 
 #### PC端韩语音包（覆盖到TargetAsset）
 + 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
