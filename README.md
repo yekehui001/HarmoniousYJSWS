@@ -8,6 +8,10 @@
 + 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
 + 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 + 提取码：8kkc 
+##### PC端婚纱版本增量包
++ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
++ 提取码：5mt3 
++ 覆盖到TargetAssets里。
 
 
 #### PC端韩语音包（覆盖到TargetAsset）
@@ -17,14 +21,11 @@
 #### PC端日语音包（覆盖到TargetAsset，仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
 + 链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
 + 提取码：nsx1
-###### 12月22日,日服新增的警车等的语音
+###### 12月22日,日语音新增警车等
 + 链接：https://pan.baidu.com/s/1VdTc2Orqe1Ec3CtFRlm-bg 
 + 提取码：epk8
 
-#### PC端婚纱版本增量包
-+ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
-+ 提取码：5mt3 
-+ 覆盖到TargetAssets里。
+
 
 #### PC端婚纱版本人物头像消失问题：
 点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
