@@ -22,6 +22,11 @@ namespace HarmoniousYJSWS
                     FileInfo info = new FileInfo(filename);
                     File.Copy(filename, Path.Combine(to, info.Name.Replace(".vkor", ".vchn")));
                 }
+                if (filename.EndsWith(".vjpn"))
+                {
+                    FileInfo info = new FileInfo(filename);
+                    File.Copy(filename, Path.Combine(to, info.Name.Replace(".vjpn", ".vchn")));
+                }
             }
         }
         public void PickAndriod(string an, string pc, string to)

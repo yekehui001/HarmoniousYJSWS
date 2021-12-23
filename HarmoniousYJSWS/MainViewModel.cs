@@ -20,6 +20,7 @@ namespace HarmoniousYJSWS
             this.PatchCommand = new DelegateCommand(DoPatchCommand);
             this.StartGameCommand = new DelegateCommand(DoStartGameCommand);
         }
+        public string Title { get; set; } = "异界资源替换 ver1.1.2";
         public bool IncludeVoice { get; set; }
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
         public string Info { get; set; } =
@@ -134,7 +135,7 @@ namespace HarmoniousYJSWS
             }
             var minSizeFileName = Directory.EnumerateFiles(hotfixAssetPath)
                 .Select(x => new FileInfo(x))
-                .Where(x => x.Name.StartsWith("ab_"))
+                .Where(x => x.Name.StartsWith("ab_script"))
                 .OrderBy(x => x.Length).FirstOrDefault()
                 ?.FullName;
             if (!string.IsNullOrEmpty(minSizeFileName))
@@ -298,6 +299,10 @@ namespace HarmoniousYJSWS
         }
         private void ExecuteUpdateScript()
         {
+            if (!CheckPath())
+            {
+                return;
+            }
             var updateScriptName = Path.Combine(targetAssetPath, "UpdateScript.bat");
             if (File.Exists(updateScriptName))
             {
@@ -306,7 +311,7 @@ namespace HarmoniousYJSWS
                 {
                     if (line[0] == '-')
                     {
-                        var removeFilename = line.Substring(1);
+                        var removeFilename = Path.Combine(targetAssetPath, line.Substring(1));
                         try
                         {
                             Log("删除{0}".Format(removeFilename));

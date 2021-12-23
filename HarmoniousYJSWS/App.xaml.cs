@@ -19,8 +19,8 @@ namespace HarmoniousYJSWS
         private MainWindow view;
         protected override void OnStartup(StartupEventArgs e)
         {
-            var funcs = ResourceExtractFunctions.Instance;
-            //ExtactVoice(@"D:\CountersideFW\client\Data\StreamingAssets", @"Voices");
+            //var funcs = ResourceExtractFunctions.Instance;
+            //funcs.ExtactVoice(@"D:\CounterSideJP\Assetbundles", @"VoicesJP");
             //funcs.ExtactIllution(@"D:\CountersideFW\client\Data\StreamingAssets", @"D:\YiJieShiWuSuo\client\Data\StreamingAssets", "Illusions");
             //funcs.ExtactIllution(@"D:\CountersideFW\client\Data\StreamingAssets", @"C:\Users\GE63VR\AppData\LocalLow\studioBside\异界事务所\Assetbundles", "Illusions");
             //funcs.ExtactIllution(@"C:\Users\GE63VR\AppData\LocalLow\studioBside\未來戰\Assetbundles", @"D:\YiJieShiWuSuo\client\Data\StreamingAssets", "Illusions");
