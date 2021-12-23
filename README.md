@@ -8,7 +8,7 @@
 + 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
 + 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 + 提取码：8kkc 
-##### PC端婚纱版本增量包
+##### PC端婚纱版本立绘增量包
 + 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
 + 提取码：5mt3 
 + 覆盖到TargetAssets里。
