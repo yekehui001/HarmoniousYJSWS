@@ -5,7 +5,7 @@
 + 有问题可以点上面的Issues提交。
 
 #### PC端老师傅版本立绘与替换工具ver 1.0.5的整合包
-+ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
++ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn。
 + 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 + 提取码：8kkc 
 ##### PC端婚纱版本立绘增量包
@@ -28,10 +28,8 @@
 + 链接：https://pan.baidu.com/s/1VdTc2Orqe1Ec3CtFRlm-bg 
 + 提取码：epk8
 
-
-
-#### PC端婚纱版本人物头像消失问题：
-点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
+#### PC端圣诞版本人物头像消失问题：
+删除TargetAsset中的ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，重新安装资源。
 
 #### 另外推荐一下贴吧涯S做的替换工具：
 + https://tieba.baidu.com/p/7649001346?pn=1
