@@ -27,6 +27,9 @@
 ###### 12月22日,日语音新增警车等
 + 链接：https://pan.baidu.com/s/1VdTc2Orqe1Ec3CtFRlm-bg 
 + 提取码：epk8
+###### 12月31日,日语音新增周时雨等
++ 链接：https://pan.baidu.com/s/1PZDOSMGill_3zCjlynygjw 
++ 提取码：l3kz
 
 #### PC端圣诞版本人物头像消失问题：
 删除TargetAsset中的ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，重新安装资源。
