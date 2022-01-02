@@ -5,10 +5,17 @@
 + 有问题可以点上面的Issues提交。
 
 #### PC端老师傅版本立绘与替换工具ver 1.0.5的整合包
-+ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn。
++ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn。
 + 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
 + 提取码：8kkc 
-
+##### PC端婚纱版本立绘增量包
++ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
++ 提取码：5mt3 
++ 覆盖到TargetAssets里。
+##### PC端圣诞版本立绘增量包
++ 链接：https://pan.baidu.com/s/1SdByrcXaLAXuTwQ4R_qEug 
++ 提取码：lqes
++ 覆盖到TargetAssets里。
 
 #### PC端韩语音包（覆盖到TargetAsset）
 + 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
@@ -17,17 +24,15 @@
 #### PC端日语音包（覆盖到TargetAsset，仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
 + 链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
 + 提取码：nsx1
-###### 12月22日,日服新增的警车等的语音
+###### 12月22日,日语音新增警车等
 + 链接：https://pan.baidu.com/s/1VdTc2Orqe1Ec3CtFRlm-bg 
 + 提取码：epk8
+###### 12月31日,日语音新增周时雨等
++ 链接：https://pan.baidu.com/s/1PZDOSMGill_3zCjlynygjw 
++ 提取码：l3kz
 
-#### PC端婚纱版本增量包
-+ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
-+ 提取码：5mt3 
-+ 覆盖到TargetAssets里。
-
-#### PC端婚纱版本人物头像消失问题：
-点一下还原按钮，删除国服安装路径资料夹下的ab_unit_face_card_loc.cn-h，ab_unit_face_card.asset-h，ab_inven_icon_unit_loc.cn-h。
+#### PC端圣诞版本人物头像消失问题：
+删除TargetAsset中的ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，重新安装资源。
 
 #### 另外推荐一下贴吧涯S做的替换工具：
 + https://tieba.baidu.com/p/7649001346?pn=1
@@ -43,11 +48,10 @@
 + 链接：https://pan.baidu.com/s/1-AOcO-uLhAZfvkFbqaM84Q 
 + 提取码：s3s2
 
-#### 安卓端立绘包
+#### 安卓端立绘包（老师傅版本很老了，新的都没有，推荐去找其他人做的新点的）
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
 + 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
 + 提取码：1682 
-+ 想到这事的时候日服端已经删了，所以没有语音包，请去NGA/贴吧自寻。注意要找安卓端的。
 
 
 ### 安卓端制作方法：
