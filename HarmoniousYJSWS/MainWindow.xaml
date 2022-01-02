@@ -16,7 +16,9 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <Label Content="客户端路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
-            <TextBox Text="{Binding Path=NativeClientPath}"  Height="23" Margin="0,4,0,3.4" TextWrapping="Wrap" Width="345"/>
+            <TextBox Text="{Binding Path=NativeClientPath}"  Height="23" Margin="0,4,0,3.4" TextWrapping="Wrap" Width="512"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Label Content="国服" VerticalContentAlignment="Center"></Label>
             <CheckBox VerticalContentAlignment="Center" IsChecked="{Binding Path=IsMainland}"></CheckBox>
             <Label Content="省服/SEA" VerticalContentAlignment="Center"></Label>

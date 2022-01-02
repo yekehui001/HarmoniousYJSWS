@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace HarmoniousYJSWS
@@ -27,7 +26,7 @@ namespace HarmoniousYJSWS
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
         public string Info { get; set; } =
             "使用方法：" +
-            "首次启动时在上面的框输入国服安装路径，然后点安装资源。\r\n" +
+            "首次启动时在上面的框输入客户端安装路径，然后点安装资源。\r\n" +
             "之后点启动游戏，等到更新完成，提示\"点击继续\"时点替换资源，然后再进游戏。\r\n" +
             "请各位不要拿这个玩具来直播，录视频做节目，截图大肆发帖之类的。\r\n" +
             "更新地址：https://github.com/yekehui001/HarmoniousYJSWS \r\n";
@@ -76,7 +75,7 @@ namespace HarmoniousYJSWS
             }
             if (!Directory.Exists(NativeClientPath))
             {
-                Log("国服安装目录设定不正确。");
+                Log("客户端安装目录设定不正确。");
                 return false;
             }
             nativeAssetPath = Path.Combine(NativeClientPath, @"client\Data\StreamingAssets");
@@ -85,18 +84,40 @@ namespace HarmoniousYJSWS
                 nativeAssetPath = Path.Combine(NativeClientPath, @"Games\client\Data\StreamingAssets");
                 if (!Directory.Exists(nativeAssetPath))
                 {
-                    Log("国服安装目录设定不正确。");
+                    Log("客户端安装目录设定不正确。");
                     return false;
                 }
             }
             Log(string.Format("发现客户端资源目录:{0}", nativeAssetPath));
-            foreach (var dir in Directory.EnumerateDirectories(@"C:\Users\"))
+            if (isMainland)
             {
-                if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles")))
+                foreach (var dir in Directory.EnumerateDirectories(@"C:\Users\"))
                 {
-                    hotfixAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles");
-                    Log(string.Format("发现热更新目录：{0}", hotfixAssetPath));
-                    break;
+                    if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles")))
+                    {
+                        hotfixAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\异界事务所\Assetbundles");
+                        Log(string.Format("发现热更新目录：{0}", hotfixAssetPath));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var dir in Directory.EnumerateDirectories(@"C:\Users\"))
+                {
+
+                    if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\未來戰\Assetbundles")))
+                    {
+                        hotfixAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\未來戰\Assetbundles");
+                        Log(string.Format("发现热更新目录：{0}", hotfixAssetPath));
+                        break;
+                    }
+                    if (Directory.Exists(Path.Combine(dir, @"AppData\LocalLow\studioBside\CounterSide\Assetbundles")))
+                    {
+                        hotfixAssetPath = Path.Combine(dir, @"AppData\LocalLow\studioBside\CounterSide\Assetbundles");
+                        Log(string.Format("发现热更新目录：{0}", hotfixAssetPath));
+                        break;
+                    }
                 }
             }
             if (!Directory.Exists(hotfixAssetPath))
@@ -374,7 +395,7 @@ namespace HarmoniousYJSWS
             Log(string.Format("开始安装"));
             HashSet<string> nativeFilenames = new HashSet<string>(Directory.EnumerateFiles(nativeAssetPath));
 
-            foreach(var targetfilename in Directory.GetFiles(targetAssetPath))
+            foreach (var targetfilename in Directory.GetFiles(targetAssetPath))
             {
                 var targetFileInfo = new FileInfo(targetfilename);
                 var nativeFilenameNoEx = Path.Combine(nativeAssetPath, Path.GetFileNameWithoutExtension(targetFileInfo.Name));

@@ -15,7 +15,7 @@ namespace HarmoniousYJSWS
     public partial class App : Application
     {
 
-        
+
         private MainWindow view;
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -32,7 +32,22 @@ namespace HarmoniousYJSWS
             MainViewModel vm = new MainViewModel();
             if (File.Exists("path.txt"))
             {
-                vm.NativeClientPath = File.ReadAllText("path.txt");
+                var lines = File.ReadAllLines("path.txt");
+                if (lines.Length > 0)
+                {
+                    vm.NativeClientPath = lines[0];
+                }
+                if (lines.Length > 1)
+                {
+                    if (lines[1] == "Mainland")
+                    {
+                        vm.IsMainland = true;
+                    }
+                    else
+                    {
+                        vm.IsMainland = false;
+                    }
+                }
             }
             view = new MainWindow();
             view.DataContext = vm;
@@ -42,7 +57,7 @@ namespace HarmoniousYJSWS
         protected override void OnExit(ExitEventArgs e)
         {
             var vm = view.DataContext as MainViewModel;
-            File.WriteAllText("path.txt", vm.NativeClientPath);
+            File.WriteAllText("path.txt", vm.NativeClientPath + "\r\n" + (vm.IsMainland ? "Mainland" : "Taiwan/SEA"));
             base.OnExit(e);
         }
     }
