@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HarmoniousYJSWS"
         mc:Ignorable="d"
-        Title="{Binding Path=Title}" Height="450" Width="550">
+        Title="{Binding Path=Title}" Height="450" Width="600">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -15,8 +15,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Label Content="国服路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
-            <TextBox Text="{Binding Path=NativeClientPath}"  Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Width="500"/>            
+            <Label Content="客户端路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox Text="{Binding Path=NativeClientPath}"  Height="23" Margin="0,4,0,3.4" TextWrapping="Wrap" Width="345"/>
+            <Label Content="国服" VerticalContentAlignment="Center"></Label>
+            <CheckBox VerticalContentAlignment="Center" IsChecked="{Binding Path=IsMainland}"></CheckBox>
+            <Label Content="省服/SEA" VerticalContentAlignment="Center"></Label>
+            <CheckBox VerticalContentAlignment="Center" IsChecked="{Binding Path=NotMainland}"></CheckBox>
         </StackPanel>
         <!--<StackPanel Orientation="Horizontal" Grid.Row="1">
             <Label Content="目标服路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
@@ -33,6 +37,6 @@
         </StackPanel>
         <ScrollViewer x:Name="sv1" Grid.Row="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <TextBox Text="{Binding Path=Info}" TextChanged="TextBox_TextChanged" ></TextBox>
-        </ScrollViewer>    
+        </ScrollViewer>
     </Grid>
 </Window>

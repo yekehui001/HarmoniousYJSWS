@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace HarmoniousYJSWS
 {
@@ -20,7 +22,7 @@ namespace HarmoniousYJSWS
             this.PatchCommand = new DelegateCommand(DoPatchCommand);
             this.StartGameCommand = new DelegateCommand(DoStartGameCommand);
         }
-        public string Title { get; set; } = "异界资源替换 ver1.1.2";
+        public string Title { get; set; } = "异界资源替换 ver1.1.3";
         public bool IncludeVoice { get; set; }
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
         public string Info { get; set; } =
@@ -29,6 +31,29 @@ namespace HarmoniousYJSWS
             "之后点启动游戏，等到更新完成，提示\"点击继续\"时点替换资源，然后再进游戏。\r\n" +
             "请各位不要拿这个玩具来直播，录视频做节目，截图大肆发帖之类的。\r\n" +
             "更新地址：https://github.com/yekehui001/HarmoniousYJSWS \r\n";
+        private bool isMainland = true;
+        private string voiceExtension = ".vchn";
+        public bool IsMainland
+        {
+            get => isMainland;
+            set
+            {
+                isMainland = value;
+                if (isMainland)
+                {
+                    voiceExtension = ".vchn";
+                }
+                else
+                {
+                    voiceExtension = ".vkor";
+                }
+            }
+        }
+        public bool NotMainland
+        {
+            get => !IsMainland;
+            set => IsMainland = !value;
+        }
         public DelegateCommand InstallCommand { get; set; }
         public DelegateCommand UninstallCommand { get; set; }
         public DelegateCommand RecoverCommand { get; set; }
@@ -90,25 +115,26 @@ namespace HarmoniousYJSWS
             }
             int count = 0;
             Log("开始卸载资源包。");
-            foreach (var filename in Directory.EnumerateFiles(nativeAssetPath))
-            {
-                if (filename.EndsWith("-h"))
-                {
-                    try
-                    {
-                        File.Delete(filename);
+            Parallel.ForEach(Directory.GetFiles(nativeAssetPath), filename =>
+             {
+                 if (filename.EndsWith("-h"))
+                 {
+                     try
+                     {
+                         File.Delete(filename);
 
-                    }
-                    catch (Exception e)
-                    {
-                        Log("未能删除{0},因为{1}。".Format(filename, e.Message));
-                    }
-                    if ((count++ % 100) == 0)
-                    {
-                        Log("已处理{0}文件".Format(count));
-                    }
-                }
-            }
+                     }
+                     catch (Exception e)
+                     {
+                         Log("未能删除{0},因为{1}。".Format(filename, e.Message));
+                     }
+                     Interlocked.Add(ref count, 1);
+                     if ((count % 100) == 0)
+                     {
+                         Log("已处理{0}文件".Format(count));
+                     }
+                 }
+             });
             Log("已处理{0}文件".Format(count));
             Log("资源包卸载完成。");
         }
@@ -175,7 +201,7 @@ namespace HarmoniousYJSWS
             {
                 return;
             }
-            foreach (var hffilename in Directory.EnumerateFiles(hotfixAssetPath))
+            Parallel.ForEach(Directory.GetFiles(hotfixAssetPath), hffilename =>
             {
                 var hfFileInfo = new FileInfo(hffilename);
                 var nativeFilename = Path.Combine(nativeAssetPath, hfFileInfo.Name);
@@ -195,7 +221,7 @@ namespace HarmoniousYJSWS
                         Log(string.Format("复制{0}失败，因为{1}", hffilename, e.Message));
                     }
                 }
-            }
+            });
         }
         private void DoRecoverCommand(object para)
         {
@@ -205,7 +231,9 @@ namespace HarmoniousYJSWS
             }
             Log(string.Format("开始还原。"));
             int count = 0;
-            foreach (var filename in Directory.EnumerateFiles(nativeAssetPath))
+            var nativeAssetFiles = Directory.GetFiles(nativeAssetPath);
+            var hotfixFiles = Directory.GetFiles(hotfixAssetPath);
+            Parallel.ForEach(nativeAssetFiles, filename =>
             {
                 if (filename.EndsWith("-b"))
                 {
@@ -221,7 +249,7 @@ namespace HarmoniousYJSWS
                     }
                     var nativeFileInfo = new FileInfo(nativeName);
                     var serverUpdateFilename = Path.Combine(hotfixAssetPath, nativeFileInfo.Name);
-                    if (File.Exists(serverUpdateFilename))
+                    if (hotfixFiles.Contains(serverUpdateFilename))
                     {
                         try
                         {
@@ -233,12 +261,13 @@ namespace HarmoniousYJSWS
                             Log(string.Format("转换{0}失败,因为{1}", serverUpdateFilename, e.Message));
                         }
                     }
-                    if ((count++ % 100) == 0)
+                    Interlocked.Add(ref count, 1);
+                    if ((count % 100) == 0)
                     {
                         Log("已处理{0}文件".Format(count));
                     }
                 }
-            }
+            });
             Log("已处理{0}文件".Format(count));
             Log(string.Format("还原到国服资源"));
         }
@@ -251,12 +280,14 @@ namespace HarmoniousYJSWS
             HotfixRecheck();
             Log(string.Format("开始转换，可能需要数秒时间。"));
             int count = 0;
-            foreach (var filename in Directory.EnumerateFiles(nativeAssetPath))
+            var nativeAssetFiles = Directory.GetFiles(nativeAssetPath);
+            var hotfixFiles = Directory.GetFiles(hotfixAssetPath);
+            Parallel.ForEach(nativeAssetFiles, filename =>
             {
                 if (filename.EndsWith("-b"))
                 {
                     Log(string.Format("{0}似乎已经是目标资源了", filename.Substring(0, filename.Length - 2)));
-                    continue;
+                    return;
                 }
                 if (filename.EndsWith("-h"))
                 {
@@ -272,7 +303,7 @@ namespace HarmoniousYJSWS
                     }
                     var nativeFileInfo = new FileInfo(nativeName);
                     var serverUpdateFilename = Path.Combine(hotfixAssetPath, nativeFileInfo.Name);
-                    if (File.Exists(serverUpdateFilename))
+                    if (hotfixFiles.Contains(serverUpdateFilename))
                     {
                         try
                         {
@@ -284,12 +315,13 @@ namespace HarmoniousYJSWS
                             Log(string.Format("转换{0}失败,因为{1}", serverUpdateFilename, e.Message));
                         }
                     }
-                    if ((count++ % 100) == 0)
+                    Interlocked.Add(ref count, 1);
+                    if ((count % 100) == 0)
                     {
                         Log("已处理{0}文件".Format(count));
                     }
                 }
-            }
+            });
             Log("已处理{0}文件".Format(count));
             Log(string.Format("已完成转换。"));
         }
@@ -341,7 +373,8 @@ namespace HarmoniousYJSWS
             int count = 0;
             Log(string.Format("开始安装"));
             HashSet<string> nativeFilenames = new HashSet<string>(Directory.EnumerateFiles(nativeAssetPath));
-            foreach (var targetfilename in Directory.EnumerateFiles(targetAssetPath))
+
+            foreach(var targetfilename in Directory.GetFiles(targetAssetPath))
             {
                 var targetFileInfo = new FileInfo(targetfilename);
                 var nativeFilenameNoEx = Path.Combine(nativeAssetPath, Path.GetFileNameWithoutExtension(targetFileInfo.Name));
@@ -350,26 +383,24 @@ namespace HarmoniousYJSWS
                 {
                     nativeFilename = nativeFilenameNoEx + ".cn";
                 }
-                if (nativeFilenames.Contains(nativeFilenameNoEx + ".vchn"))
+                if (nativeFilenames.Contains(nativeFilenameNoEx + voiceExtension))
                 {
-                    nativeFilename = nativeFilenameNoEx + ".vchn";
+                    nativeFilename = nativeFilenameNoEx + voiceExtension;
                 }
                 if (!string.IsNullOrEmpty(nativeFilename))
                 {
-                    if (Path.GetExtension(nativeFilename) == ".cn" || Path.GetExtension(nativeFilename) == ".vchn")
+                    try
                     {
-                        try
-                        {
-                            File.Copy(targetfilename, nativeFilename + "-h", true);
-                        }
-                        catch (Exception e)
-                        {
-                            Log(string.Format("复制{0}失败，因为{1}", nativeFilename + "-h", e.Message));
-                        }
-                        if ((count++ % 100) == 0)
-                        {
-                            Log("已处理{0}文件".Format(count));
-                        }
+                        File.Copy(targetfilename, nativeFilename + "-h", true);
+                    }
+                    catch (Exception e)
+                    {
+                        Log(string.Format("复制{0}失败，因为{1}", nativeFilename + "-h", e.Message));
+                    }
+                    Interlocked.Add(ref count, 1);
+                    if ((count % 100) == 0)
+                    {
+                        Log("已处理{0}文件".Format(count));
                     }
                 }
             }
