@@ -30,6 +30,11 @@
 ###### 12月31日,日语音新增周时雨等
 + 链接：https://pan.baidu.com/s/1PZDOSMGill_3zCjlynygjw 
 + 提取码：l3kz
+###### 1月10日,日语音新增觉醒师傅椅子等
++ 链接：https://pan.baidu.com/s/1Gbqqwc0XVCq-KDld-r7g5g 
++ 提取码：c5y1
+
+
 
 #### PC端圣诞版本人物头像消失问题：
 删除TargetAsset中的ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，重新安装资源。
