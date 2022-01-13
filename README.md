@@ -33,7 +33,9 @@
 ###### 1月10日,日语音新增觉醒师傅椅子等
 + 链接：https://pan.baidu.com/s/1Gbqqwc0XVCq-KDld-r7g5g 
 + 提取码：c5y1
-
+###### 1月13日,日语音新增女儿
++ 链接：https://pan.baidu.com/s/1RjVx6j7E9-Lku02fuhV9Qg 
++ 提取码：84ad
 
 
 #### PC端圣诞版本人物头像消失问题：
