@@ -4,42 +4,9 @@
 + https://github.com/yekehui001/HarmoniousYJSWS/releases
 + 有问题可以点上面的Issues提交。
 
-#### PC端老师傅版本立绘与替换工具ver 1.0.5的整合包
-+ 下载后删除其中的ab_unit_face_card_loc.cn，ab_unit_face_card.asset，ab_inven_icon_unit_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn。
-+ 链接：https://pan.baidu.com/s/1W6jIjHtYk7LPQkpzqvcHHA 
-+ 提取码：8kkc 
-##### PC端婚纱版本立绘增量包
-+ 链接：https://pan.baidu.com/s/1y1RrHXaolIeCPrzztNx0Mw 
-+ 提取码：5mt3 
-+ 覆盖到TargetAssets里。
-##### PC端圣诞版本立绘增量包
-+ 链接：https://pan.baidu.com/s/1SdByrcXaLAXuTwQ4R_qEug 
-+ 提取码：lqes
-+ 覆盖到TargetAssets里。
-
-#### PC端韩语音包（覆盖到TargetAsset）
-+ 链接：https://pan.baidu.com/s/1dFAImxCePjvvTfORr2IyBw 
-+ 提取码：y7gc 
-
-#### PC端日语音包（覆盖到TargetAsset，仅有7成语言，可以和韩语汉语相互覆盖拼凑使用）
-+ 链接：https://pan.baidu.com/s/114Y6bHYV4dl1UWFPWdKdYQ 
-+ 提取码：nsx1
-###### 12月22日,日语音新增警车等
-+ 链接：https://pan.baidu.com/s/1VdTc2Orqe1Ec3CtFRlm-bg 
-+ 提取码：epk8
-###### 12月31日,日语音新增周时雨等
-+ 链接：https://pan.baidu.com/s/1PZDOSMGill_3zCjlynygjw 
-+ 提取码：l3kz
-###### 1月10日,日语音新增觉醒师傅椅子等
-+ 链接：https://pan.baidu.com/s/1Gbqqwc0XVCq-KDld-r7g5g 
-+ 提取码：c5y1
-###### 1月13日,日语音新增女儿
-+ 链接：https://pan.baidu.com/s/1RjVx6j7E9-Lku02fuhV9Qg 
-+ 提取码：84ad
-
-
-#### PC端圣诞版本人物头像消失问题：
-删除TargetAsset中的ab_ui_nkm_ui_shop_img_loc.cn，ab_ui_nkm_ui_shop_img_loc.cn，重新安装资源。
+#### PC端新年版本立绘语音整合包1.1.4版本
++ 链接：https://pan.baidu.com/s/1nkDlj1Y2RsNX05Uh5Y8miQ 
++ 提取码：v08w
 
 #### 另外推荐一下贴吧涯S做的替换工具：
 + https://tieba.baidu.com/p/7649001346?pn=1
