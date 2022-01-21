@@ -5,6 +5,7 @@
 + 有问题可以点上面的Issues提交。
 
 #### PC端新年版本立绘语音整合包1.1.4版本
++ 有默认替换日语音的bug，需要下1.1.5版修正
 + 链接：https://pan.baidu.com/s/1nkDlj1Y2RsNX05Uh5Y8miQ 
 + 提取码：v08w
 
