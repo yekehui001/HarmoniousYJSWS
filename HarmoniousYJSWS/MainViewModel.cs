@@ -11,6 +11,7 @@ using System.Threading;
 
 namespace HarmoniousYJSWS
 {
+
     class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
@@ -21,8 +22,9 @@ namespace HarmoniousYJSWS
             this.PatchCommand = new DelegateCommand(DoPatchCommand);
             this.StartGameCommand = new DelegateCommand(DoStartGameCommand);
         }
-        public string Title { get; set; } = "异界资源替换 ver1.1.3";
-        public bool IncludeVoice { get; set; }
+        public string Title { get; set; } = "异界资源替换 ver1.1.5";
+        public string[] VoiceSelections { get; set; } = { "汉语（不替换）", "韩语", "日语（缺省用韩语填充）" };
+        public string VoiceSelected { get; set; } = "汉语（不替换）";
         public string NativeClientPath { get; set; } = @"??\YiJieShiWuSuo";
         public string Info { get; set; } =
             "使用方法：" +
@@ -397,6 +399,28 @@ namespace HarmoniousYJSWS
 
             foreach (var targetfilename in Directory.GetFiles(targetAssetPath))
             {
+                if (targetfilename.EndsWith(".vjpn"))
+                {
+                    if (VoiceSelected.StartsWith("汉语"))
+                    {
+                        continue;
+                    }
+                }
+                if (targetfilename.EndsWith(".vkor"))
+                {
+                    if (VoiceSelected.StartsWith("汉语"))
+                    {
+                        continue;
+                    }
+                    if (VoiceSelected.StartsWith("日语"))
+                    {
+                        var jpVoiceFilename = targetfilename.Replace(".vkor", ".vjpn");
+                        if (File.Exists(jpVoiceFilename))
+                        {
+                            continue;
+                        }
+                    }
+                }
                 var targetFileInfo = new FileInfo(targetfilename);
                 var nativeFilenameNoEx = Path.Combine(nativeAssetPath, Path.GetFileNameWithoutExtension(targetFileInfo.Name));
                 var nativeFilename = string.Empty;

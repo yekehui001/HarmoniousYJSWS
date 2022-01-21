@@ -55,7 +55,7 @@ namespace HarmoniousYJSWS
                 FileInfo info = new FileInfo(filename);
                 if ((info.Name.StartsWith("ab_fx_skill_cutin_nkm_")
                     || info.Name.StartsWith("ab_ui_nkm_ui_")
-                    || info.Name.StartsWith("ab_unit_game_spine_nkm_")               
+                    || info.Name.StartsWith("ab_unit_game_spine_nkm_")
                     || info.Name.StartsWith("ab_unit_illust_"))
                     && info.Name.EndsWith(".cn")
                     || info.Name.StartsWith("ab_login_screen_"))
@@ -72,10 +72,9 @@ namespace HarmoniousYJSWS
                         Console.WriteLine(fromName);
                         continue;
                     }
-                    if (!File.Exists(Path.Combine(to, info.Name.Replace(".asset", ".cn"))))
-                    {
-                        File.Copy(fromName, Path.Combine(to, info.Name.Replace(".asset",".cn")), false);
-                    }
+                    FileInfo fromInfo = new FileInfo(fromName);
+                    File.Copy(fromName, Path.Combine(to, fromInfo.Name), false);
+
                 }
             }
         }

@@ -23,6 +23,7 @@
             <CheckBox VerticalContentAlignment="Center" IsChecked="{Binding Path=IsMainland}"></CheckBox>
             <Label Content="省服/SEA" VerticalContentAlignment="Center"></Label>
             <CheckBox VerticalContentAlignment="Center" IsChecked="{Binding Path=NotMainland}"></CheckBox>
+        
         </StackPanel>
         <!--<StackPanel Orientation="Horizontal" Grid.Row="1">
             <Label Content="目标服路径" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
@@ -30,6 +31,9 @@
         </StackPanel>-->
         <StackPanel Orientation="Horizontal" Grid.Row="2">
             <Button Width="100" Command="{Binding Path=InstallCommand}" Content="安装资源包"></Button>
+            <Label VerticalContentAlignment="Center" Content="安装语音:"></Label>
+            <ComboBox VerticalContentAlignment="Center" ItemsSource="{Binding Path=VoiceSelections}" SelectedValue="{Binding Path=VoiceSelected, Mode=TwoWay}"></ComboBox>
+
             <Button Width="100" Command="{Binding Path=UninstallCommand}" Content="卸载资源包"></Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3">
