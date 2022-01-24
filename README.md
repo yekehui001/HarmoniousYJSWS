@@ -19,9 +19,9 @@
 + 注意PC端和安卓端的素材是不兼容的。
 + 装了官服或其他人做的客户端需要先卸载掉。
 + 不支持合作方登录，需要将合作方账号绑定到手机号才能登录。
-+ 更新到圣诞版本
-+ 链接：https://pan.baidu.com/s/1-AOcO-uLhAZfvkFbqaM84Q 
-+ 提取码：s3s2
++ 更新到新年版本
++ 链接：https://pan.baidu.com/s/1E_DSJYWNEwKdFdRpFnIr1A 
++ 提取码：2914
 
 #### 安卓端立绘包（老师傅版本很老了，新的都没有，推荐去找其他人做的新点的）
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
@@ -30,7 +30,11 @@
 
 
 ### 安卓端制作方法：
-#### 1. 制做轻量化客户端。
+#### 0.弄到新客户端
++ 不知道为什么紫龙没有放出新年版本的客户端，只能从圣诞版本更新，而更新的客户端没有root是拿不到的。
++ 新客户端的位置需要root，在/data/user/0/com.zlongame.cn.coside里面，找个叫base.odex.apk的文件。
+
+#### 1. 制做轻量化客户端，以下方法可以MT管理器做。
 + 下载你要玩的那个服的apk文件，以cn_yjsws.apk代称。下载apktool。下载，安装jdk。配置好系统PATH。
 + 打开cmd，转到apk的路径。
 + apktool d cn_yjsws.apk
