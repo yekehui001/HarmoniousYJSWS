@@ -8,6 +8,9 @@
 + 有默认替换日语音的bug，需要下1.1.5版修正
 + 链接：https://pan.baidu.com/s/1nkDlj1Y2RsNX05Uh5Y8miQ 
 + 提取码：v08w
+#### PC端日语音 220216更新 ESPR小队，情人节皮肤，觉醒米娜，中二副总，罗没病
++ 链接：https://pan.baidu.com/s/1bov_NTH77FCXddwQ0-SfvQ 
++ 提取码：1pya
 
 #### 另外推荐一下贴吧涯S做的替换工具：
 + https://tieba.baidu.com/p/7649001346?pn=1
