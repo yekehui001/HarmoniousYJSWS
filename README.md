@@ -11,6 +11,10 @@
 #### PC端日语音 220216更新 ESPR小队，情人节皮肤，觉醒米娜，中二副总，罗没病
 + 链接：https://pan.baidu.com/s/1bov_NTH77FCXddwQ0-SfvQ 
 + 提取码：1pya
+#### PC端立绘 220217更新 领航员技能图片，解决副总开技能卡死的问题
++ 链接：https://pan.baidu.com/s/1vNuAigL_eX56NwVc6oGkCw 
++ 提取码：fgvr
+
 
 #### 另外推荐一下贴吧涯S做的替换工具：
 + https://tieba.baidu.com/p/7649001346?pn=1
