@@ -29,11 +29,10 @@
 + 链接：https://pan.baidu.com/s/1OShRttsMuvACT4Q3c1oWtA 
 + 提取码：k348
 
-#### 安卓端立绘包（老师傅版本很老了，新的都没有，推荐去找其他人做的新点的）
+#### 安卓端立绘包
 + 安装完客户端，等更新结束之后复制到Android\data\com.zlongame.cn.coside\files\Assetbundles下覆盖原文件
-+ 链接：https://pan.baidu.com/s/1E3p7wbRGHyIVpJnCaGsl0w 
-+ 提取码：1682 
-
++ 链接：https://pan.baidu.com/s/1rnD43j84C5FNDMZ_E1njoA 
++ 提取码：lk2s
 
 ### 安卓端制作方法：
 #### 1. 制做轻量化客户端
