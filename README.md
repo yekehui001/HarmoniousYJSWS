@@ -36,7 +36,7 @@
 
 
 ### 安卓端制作方法：
-#### 1. 制做轻量化客户端，以下步骤也可以用MT管理器做。
+#### 1. 制做轻量化客户端
 + 下载官方的apk文件
 + 用MT管理器、rar浏览器之类的工具打开apk的文件结构
 + 删除 cn_yjsws\assets\Assetbundles下的所有内容
@@ -45,15 +45,15 @@
 #### 2. 制作资源包（注意PC和安卓的资源文件是不互通的）
 + 下载省服的apk
 + 用MT管理器、rar浏览器之类的工具打开apk的文件结构，复制assets/Assetbundles/中的
-+ ab_fx_skill_cutin_nkm_*
++ ab_fx_skill_cutin_*
 + ab_ui_nkm_ui_*
 + ab_unit_game_spine_nkm_*
 + ab_unit_illust_*
 + ab_login_screen_*
 + 把上述文件的扩展名从.asset改.cn
 + 如果需要语音的话还有
-+ ab_ui_unit_voice_*
-+ 把上述文件的扩展名从.vkor改.vchn
++ \*.vkor
++ 把上述文件的扩展名从.vkor改.vchn(替换汉语）或者.vjpn（补全日语）
 + 安装省服apk，更新，去省服热更新目录再次寻找以上提到的资源文件,并重复改名操作。（建议做个批处理脚本或者自己做个改名程序）
 + 省服热更新文件夹似乎是Android\data\com.gamebeans.coside\files\Assetbundles,具体记不得了，反正认准gamebeans和coside。
 + 国服热更新文件夹是Android\data\com.zlongame.cn.coside\files\Assetbundles
