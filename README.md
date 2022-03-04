@@ -14,8 +14,7 @@
 #### PC端立绘 220217更新 领航员技能图片，解决副总开技能卡死的问题
 + 链接：https://pan.baidu.com/s/1vNuAigL_eX56NwVc6oGkCw 
 + 提取码：fgvr
-#### 删除ab_unit_game_spine_nkm_unit_c_strega_evelyn.asset可以解决飞天奶开大卡死的问题。紫龙似乎悄悄改了这个文件，把ry加上去了。代价是换了台服文件会卡死ORZ。
-#### 日服语音想抢先体验的可以直接下日服端，更新了之后把*.vjpn直接复制进国服。
+#### 删除ab_unit_game_spine_nkm_unit_c_strega_evelyn.asset可以解决飞天奶开大卡死的问题。
 #### 暂时停更了，最近忙炸了。推荐用下面贴吧大佬做的↓
 + https://tieba.baidu.com/p/7649001346?pn=1
 + 真一键替换。这个工具启动后会顶替紫龙的更新服务器，然后“更新”掉和谐的衣服，非常强。
