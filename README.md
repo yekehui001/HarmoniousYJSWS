@@ -4,20 +4,16 @@
 + https://github.com/yekehui001/HarmoniousYJSWS/releases
 + 有问题可以点上面的Issues提交。
 
-#### PC端新年版本立绘语音整合包1.1.4版本
-+ 有默认替换日语音的bug，需要下1.1.5版修正
-+ 链接：https://pan.baidu.com/s/1nkDlj1Y2RsNX05Uh5Y8miQ 
-+ 提取码：v08w
-#### PC端日语音 220216更新 ESPR小队，情人节皮肤，觉醒米娜，中二副总，罗没病
-+ 链接：https://pan.baidu.com/s/1bov_NTH77FCXddwQ0-SfvQ 
-+ 提取码：1pya
-#### PC端立绘 220217更新 领航员技能图片，解决副总开技能卡死的问题
-+ 链接：https://pan.baidu.com/s/1vNuAigL_eX56NwVc6oGkCw 
-+ 提取码：fgvr
-#### 删除ab_unit_game_spine_nkm_unit_c_strega_evelyn.asset可以解决飞天奶开大卡死的问题。似乎是更新了一次模型，懒得换了，现在不和谐也有ry了
+#### PC端新年版本立绘语音整合包1.1.5版本
+
+####
+
 #### 暂时停更了，最近忙炸了。推荐用下面贴吧大佬做的↓
 + https://tieba.baidu.com/p/7649001346?pn=1
 + 真一键替换。这个工具启动后会顶替紫龙的更新服务器，然后“更新”掉和谐的衣服，非常强。
+
+#### 1.1.6之后的版本预计会改成直接从日服/台服端提取资源，不再附加整合包。
+
 
 #### 安卓官服轻量化客户端
 + 第一次运行请勾上完整性检测。
